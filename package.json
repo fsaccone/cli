@@ -1,6 +1,6 @@
 {
   "name": "fsaccone-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create an opinionated project configuration via CLI.",
   "author": "Francesco Saccone",
   "license": "MIT",

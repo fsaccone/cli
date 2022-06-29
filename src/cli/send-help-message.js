@@ -13,7 +13,7 @@ module.exports.SEND_HELP_MESSAGE = () => {
 
 Configurations:
 	- ${getConfigurations()
-			.join('\n  - ')}
+			.join('\n\t- ')}
 
 	Example:
 	> fsaccone-cli ${getRandomConfiguration()}
