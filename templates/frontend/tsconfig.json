@@ -1,0 +1,87 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"lib": [
+			"DOM",
+			"ES6",
+			"ES2022"
+		],
+		"jsx": "react-jsx",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"jsxFactory": "",
+		"jsxFragmentFactory": "",
+		"jsxImportSource": "",
+		"reactNamespace": "",
+		"noLib": false,
+		"useDefineForClassFields": true,
+
+		"module": "ES6",
+		"moduleResolution": "Node",
+		"baseUrl": "./src",
+		"paths": {},
+		"rootDirs": [
+			"./src"
+		],
+		"typeRoots": [
+			"./src/typings"
+		],
+		"allowUmdGlobalAccess": true,
+		"resolveJsonModule": true,
+		"noResolve": false,
+
+		"allowJs": false,
+		"checkJs": false,
+		"maxNodeModuleJsDepth": 1,
+
+		"declaration": true,
+		"declarationDir": "./build/types",
+		"declarationMap": true,
+		"emitDeclarationOnly": true,
+		"sourceMap": true,
+		"outDir": "./build",
+		"removeComments": true,
+		"noEmit": false,
+		"importHelpers": true,
+		"importsNotUsedAsValues": "remove",
+		"downlevelIteration": true,
+		"sourceRoot": "",
+		"mapRoot": "",
+		"inlineSources": true,
+		"emitBOM": true,
+		"newLine": "crlf",
+		"stripInternal": true,
+		"noEmitHelpers": false,
+		"noEmitOnError": true,
+		"preserveConstEnums": false,
+
+		"isolatedModules": false,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"preserveSymlinks": true,
+		"forceConsistentCasingInFileNames": true,
+
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"useUnknownInCatchVariables": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"allowUnusedLabels": true,
+		"allowUnreachableCode": false,
+
+		"skipDefaultLibCheck": true,
+		"skipLibCheck": true
+	}
+}
