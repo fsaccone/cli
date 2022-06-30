@@ -1,6 +1,6 @@
 {
   "name": "fsaccone-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create an opinionated project configuration via CLI.",
   "author": "Francesco Saccone",
   "license": "MIT",
@@ -17,10 +17,10 @@
     "cleaninstall": "npm ci",
     "config": "npm install",
     "lint": "eslint . --fix",
-    "start": "node build/index"
+    "start": "node src/index"
   },
   "devDependencies": {
-    "@fsaccone/eslint-config": "^1.1.4",
+    "@fsaccone/eslint-config": "*",
     "@types/node": "*",
     "@typescript-eslint/parser": "*",
     "typescript": "*"

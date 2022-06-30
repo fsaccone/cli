@@ -7,8 +7,7 @@ const program = new Command();
 const doneMessages = {
 	basic: '',
 	frontend: 'Run "npm run config" to finish the configuration.',
-	node: 'Run "npm run config" to finish the configuration.',
-	'npm-package': 'Run "npm run config" to finish the configuration.'
+	node: 'Run "npm run config" to finish the configuration.'
 };
 
 program
