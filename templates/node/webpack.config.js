@@ -22,7 +22,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(?!(ts|js|json)$).*$/u,
+				test: /\.(png|jpg|jpeg|svg|gif)$/u,
 				type: 'asset/resource',
 				generator: { filename: './assets/[hash][ext]' }
 			}
@@ -36,7 +36,12 @@ module.exports = {
 		extensions: [
 			'.ts',
 			'.js',
-			'.json'
+			'.json',
+			'.png',
+			'.jpg',
+			'.jpeg',
+			'.svg',
+			'.gif'
 		]
 	},
 	output: {
