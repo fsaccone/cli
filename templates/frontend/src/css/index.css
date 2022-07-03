@@ -1,0 +1,22 @@
+html,
+body
+{
+  background: fixed #50aff5ff;
+  border: 0;
+  height: 100%;
+  margin: 0;
+  overflow: hidden auto;
+  padding: 0;
+  width: 100%;
+}
+
+*
+{
+  box-sizing: border-box;
+}
+
+img
+{
+  max-height: 100%;
+  max-width: 100%;
+}
