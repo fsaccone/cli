@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "npm run lint && webpack && tsc",
-    "cleaninstall": "npm ci",
+    "clean-config": "npm ci",
     "config": "npm install",
     "dev": "webpack --watch --mode development",
     "lint": "eslint . --fix",

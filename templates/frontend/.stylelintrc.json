@@ -149,7 +149,7 @@
 		"block-closing-brace-empty-line-before": "never",
 		"block-closing-brace-newline-after": "always",
 		"block-closing-brace-newline-before": "always",
-		"block-closing-brace-space-after": "never",
+		"block-closing-brace-space-after": null,
 		"block-closing-brace-space-before": null,
 		"block-opening-brace-newline-after": "always",
 		"block-opening-brace-newline-before": "always",

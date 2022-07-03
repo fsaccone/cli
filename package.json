@@ -1,6 +1,6 @@
 {
   "name": "fsaccone-cli",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Create an opinionated project configuration via CLI.",
   "author": "Francesco Saccone",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/fsaccone/cli#readme",
   "bin": "./src/index.js",
   "scripts": {
-    "cleaninstall": "npm ci",
+    "clean-config": "npm ci",
     "config": "npm install",
     "lint": "eslint . --fix",
     "start": "node src/index"
