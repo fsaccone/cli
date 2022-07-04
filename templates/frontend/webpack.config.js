@@ -3,7 +3,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 module.exports = {
 	entry: { app: './src/index.ts' },
@@ -68,8 +67,7 @@ module.exports = {
 			favicon: resolve(__dirname, './static/favicon.png')
 		}),
 		new MiniCssExtractPlugin({ filename: './[contenthash].min.css' }),
-		new CssMinimizerPlugin(),
-		new WebpackManifestPlugin()
+		new CssMinimizerPlugin()
 	],
 	target: ['web', 'es5'],
 	mode: 'production'

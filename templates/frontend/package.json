@@ -24,7 +24,6 @@
     "typescript": "*",
     "webpack": "*",
     "webpack-cli": "*",
-    "webpack-dev-server": "*",
-    "webpack-manifest-plugin": "*"
+    "webpack-dev-server": "*"
   }
 }
