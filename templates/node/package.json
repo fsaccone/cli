@@ -1,5 +1,6 @@
 {
   "private": true,
+  "main": "build/index.min.js",
   "scripts": {
     "build": "npm run lint && webpack && tsc",
     "clean-config": "npm ci",

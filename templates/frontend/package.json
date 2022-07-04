@@ -19,7 +19,6 @@
     "css-minimizer-webpack-plugin": "*",
     "html-webpack-plugin": "*",
     "mini-css-extract-plugin": "*",
-    "robotstxt-webpack-plugin": "*",
     "stylelint": "*",
     "stylelint-order": "*",
     "typescript": "*",
