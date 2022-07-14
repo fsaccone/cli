@@ -13,25 +13,23 @@ module.exports = {
 					options: {
 						presets: [
 							'@babel/preset-env',
-							'@babel/preset-typescript'
-						]
-					}
+							'@babel/preset-typescript',
+						],
+					},
 				},
-				include: [
-					resolve(__dirname, './src')
-				]
+				include: [resolve(__dirname, './src')],
 			},
 			{
 				test: /\.(png|jpg|jpeg|svg|gif)$/u,
 				type: 'asset/resource',
-				generator: { filename: './assets/[hash][ext]' }
-			}
-		]
+				generator: { filename: './assets/[hash][ext]' },
+			},
+		],
 	},
 	resolve: {
 		modules: [
 			resolve(__dirname, 'src'),
-			'node_modules'
+			'node_modules',
 		],
 		extensions: [
 			'.ts',
@@ -41,20 +39,20 @@ module.exports = {
 			'.jpg',
 			'.jpeg',
 			'.svg',
-			'.gif'
-		]
+			'.gif',
+		],
 	},
 	output: {
 		filename: 'index.min.js',
-		path: resolve(__dirname, './build')
+		path: resolve(__dirname, './build'),
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new NodemonPlugin({
 			cwd: resolve(__dirname, 'build'),
-			script: 'index.min.js'
-		})
+			script: 'index.min.js',
+		}),
 	],
 	target: ['node', 'es5'],
-	mode: 'production'
+	mode: 'production',
 };

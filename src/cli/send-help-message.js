@@ -15,7 +15,6 @@ Configurations:
     - ${getConfigurations().join('\n    - ')}
 
     Example:
-        fsaccone-cli ${getRandomConfiguration()}`
-	);
+        fsaccone-cli ${getRandomConfiguration()}`);
 };
 

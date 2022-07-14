@@ -15,32 +15,30 @@ module.exports = {
 					options: {
 						presets: [
 							'@babel/preset-env',
-							'@babel/preset-typescript'
-						]
-					}
+							'@babel/preset-typescript',
+						],
+					},
 				},
-				include: [
-					resolve(__dirname, './src')
-				]
+				include: [resolve(__dirname, './src')],
 			},
 			{
 				test: /\.css$/u,
 				use: [
 					MiniCssExtractPlugin.loader,
-					'css-loader'
-				]
+					'css-loader',
+				],
 			},
 			{
 				test: /\.(png|jpg|jpeg|svg|gif)$/u,
 				type: 'asset/resource',
-				generator: { filename: './assets/[hash][ext]' }
-			}
-		]
+				generator: { filename: './assets/[hash][ext]' },
+			},
+		],
 	},
 	resolve: {
 		modules: [
 			resolve(__dirname, 'src'),
-			'node_modules'
+			'node_modules',
 		],
 		extensions: [
 			'.ts',
@@ -51,12 +49,12 @@ module.exports = {
 			'.jpg',
 			'.jpeg',
 			'.svg',
-			'.gif'
-		]
+			'.gif',
+		],
 	},
 	output: {
 		filename: '[contenthash].min.js',
-		path: resolve(__dirname, './build')
+		path: resolve(__dirname, './build'),
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
@@ -64,11 +62,11 @@ module.exports = {
 			filename: 'index.html',
 			inject: true,
 			template: resolve(__dirname, './static/index.html'),
-			favicon: resolve(__dirname, './static/favicon.png')
+			favicon: resolve(__dirname, './static/favicon.png'),
 		}),
 		new MiniCssExtractPlugin({ filename: './[contenthash].min.css' }),
-		new CssMinimizerPlugin()
+		new CssMinimizerPlugin(),
 	],
 	target: ['web', 'es5'],
-	mode: 'production'
+	mode: 'production',
 };

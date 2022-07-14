@@ -3,14 +3,10 @@ const { join } = require('path');
 const removeSubdirs = (dir, removeRootDir = false) => {
 	const dirFiles = readdirSync(dir);
 
-	for (let iDirFile = 0; iDirFile < dirFiles.length; iDirFile++) {
-		const dirFile = dirFiles[iDirFile];
+	for (const dirFile of dirFiles) {
 		const dirFileFullPath = join(dir, dirFile);
 
-		if (
-			lstatSync(dirFileFullPath)
-					.isDirectory()
-		) {
+		if (lstatSync(dirFileFullPath).isDirectory()) {
 			removeSubdirs(dirFileFullPath, true);
 		} else {
 			unlinkSync(dirFileFullPath);
@@ -28,28 +24,20 @@ const COPY_FILES = (fullDirToRead, fullDirToWrite) => {
 
 	const filesToRead = readdirSync(fullDirToRead);
 
-	iterateThroughFilesToRead:
-	for (let iFileToRead = 0; iFileToRead < filesToRead.length; iFileToRead++) {
-		const fileToRead = filesToRead[iFileToRead];
+	for (const fileToRead of filesToRead) {
 		const fileToReadFullPath = join(fullDirToRead, fileToRead);
 		let fileToWrite = fileToRead;
 
-		switch (fileToRead) {
-			case 'gitignore.txt':
-				fileToWrite = '.gitignore';
-				break;
-			case 'donemessage.txt':
-				doneMessage = readFileSync(fileToReadFullPath, 'utf-8').trim();
-				continue iterateThroughFilesToRead;
-			default:
+		if (fileToRead === '.gitignore') {
+			fileToWrite = '.gitignore';
+		} else if (fileToRead === 'donemessage.txt') {
+			doneMessage = readFileSync(fileToReadFullPath, 'utf-8').trim();
+			continue;
 		}
 
 		const fileToWriteFullPath = join(fullDirToWrite, fileToWrite);
 
-		if (
-			lstatSync(fileToReadFullPath)
-					.isDirectory()
-		) {
+		if (lstatSync(fileToReadFullPath).isDirectory()) {
 			mkdirSync(fileToWriteFullPath);
 			COPY_FILES(fileToReadFullPath, fileToWriteFullPath);
 			continue;
