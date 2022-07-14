@@ -22,22 +22,28 @@ const removeSubdirs = (dir, removeRootDir = false) => {
 	}
 };
 const COPY_FILES = (fullDirToRead, fullDirToWrite) => {
+	let doneMessage = '';
+
 	removeSubdirs(fullDirToWrite);
 
 	const filesToRead = readdirSync(fullDirToRead);
 
+	iterateThroughFilesToRead:
 	for (let iFileToRead = 0; iFileToRead < filesToRead.length; iFileToRead++) {
 		const fileToRead = filesToRead[iFileToRead];
+		const fileToReadFullPath = join(fullDirToRead, fileToRead);
 		let fileToWrite = fileToRead;
 
 		switch (fileToRead) {
 			case 'gitignore.txt':
 				fileToWrite = '.gitignore';
 				break;
+			case 'donemessage.txt':
+				doneMessage = readFileSync(fileToReadFullPath, 'utf-8').trim();
+				continue iterateThroughFilesToRead;
 			default:
 		}
 
-		const fileToReadFullPath = join(fullDirToRead, fileToRead);
 		const fileToWriteFullPath = join(fullDirToWrite, fileToWrite);
 
 		if (
@@ -53,6 +59,8 @@ const COPY_FILES = (fullDirToRead, fullDirToWrite) => {
 
 		writeFileSync(fileToWriteFullPath, fileToReadData, 'utf-8');
 	}
+
+	return doneMessage;
 };
 
-module.exports.COPY_FILES = COPY_FILES;
+exports.COPY_FILES = COPY_FILES;

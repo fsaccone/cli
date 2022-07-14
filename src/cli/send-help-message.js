@@ -7,16 +7,15 @@ const getRandomConfiguration = () => {
 	return configs[Math.floor(Math.random() * configs.length)];
 };
 
-module.exports.SEND_HELP_MESSAGE = () => {
+exports.SEND_HELP_MESSAGE = () => {
 	console.info(`
 # To build a project, run "fsaccone-cli <CONFIGURATION>"
 
 Configurations:
-	- ${getConfigurations()
-			.join('\n\t- ')}
+    - ${getConfigurations().join('\n    - ')}
 
-	Example:
-	> fsaccone-cli ${getRandomConfiguration()}
-	`);
+    Example:
+        fsaccone-cli ${getRandomConfiguration()}`
+	);
 };
 

@@ -5,7 +5,7 @@ const { readdirSync } = require('fs');
 const { resolve } = require('path');
 const getConfigurations = () => readdirSync(resolve(__dirname, '../../templates'), 'utf-8');
 
-module.exports.INITIALIZE = (configName, doneMessage = '') => {
+exports.INITIALIZE = configName => {
 	const configs = getConfigurations();
 
 	if (!configs.includes(configName)) {
@@ -13,6 +13,7 @@ module.exports.INITIALIZE = (configName, doneMessage = '') => {
 		return;
 	}
 
-	COPY_FILES(resolve(__dirname, `../../templates/${configName}`), cwd());
+	const doneMessage = COPY_FILES(resolve(__dirname, `../../templates/${configName}`), cwd());
+
 	console.info(`\n# Files were written successfully. ${doneMessage}\n`);
 };
