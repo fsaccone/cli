@@ -1,0 +1,47 @@
+{
+  "name": "fsaccone",
+  "version": "1.1.0",
+  "description": "Create an opinionated project configuration via CLI.",
+  "author": "Francesco Saccone",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fsaccone/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/fsaccone/cli/issues"
+  },
+  "homepage": "https://github.com/fsaccone/cli#readme",
+  "bin": "./build/index.min.js",
+  "files": [
+    "templates",
+    "build"
+  ],
+  "scripts": {
+    "build": "npm run lint && webpack",
+    "clean-config": "npm ci",
+    "config": "npm install",
+    "dev": "webpack --watch --mode development",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "@babel/preset-typescript": "*",
+    "@fsaccone/eslint-config": "*",
+    "@types/node": "*",
+    "@types/webpack": "*",
+    "@typescript-eslint/parser": "*",
+    "babel-loader": "*",
+    "clean-webpack-plugin": "*",
+    "nodemon-webpack-plugin": "*",
+    "ts-node": "*",
+    "typescript": "*",
+    "webpack": "*",
+    "webpack-cli": "*"
+  },
+  "dependencies": {
+    "commander": "9.4.0"
+  }
+}

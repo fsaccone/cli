@@ -1,0 +1,23 @@
+{
+	"extends": "@fsaccone",
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"root": true,
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"parser": "@typescript-eslint/parser",
+			"parserOptions": {
+				"ecmaVersion": "latest",
+				"sourceType": "module",
+				"project": "tsconfig.json"
+			}
+		}
+	]
+}

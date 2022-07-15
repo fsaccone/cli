@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "main": "build/index.min.js",
+  "scripts": {
+    "build": "npm run lint && webpack",
+    "clean-config": "npm ci",
+    "config": "npm install",
+    "dev": "webpack --watch --mode development",
+    "lint": "eslint . --fix",
+    "start": "cd build && node index.min.js && cd .."
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "@babel/preset-typescript": "*",
+    "@fsaccone/eslint-config": "*",
+    "@types/node": "*",
+    "@typescript-eslint/parser": "*",
+    "babel-loader": "*",
+    "clean-webpack-plugin": "*",
+    "nodemon-webpack-plugin": "*",
+    "ts-node": "*",
+    "typescript": "*",
+    "webpack": "*",
+    "webpack-cli": "*"
+  }
+}
