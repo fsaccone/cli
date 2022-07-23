@@ -1,9 +1,8 @@
-import type { Configuration } from 'webpack'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import NodemonPlugin from 'nodemon-webpack-plugin'
-import { resolve } from 'path'
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const NodemonPlugin = require('nodemon-webpack-plugin')
+const { resolve } = require('path')
 
-const config: Configuration = {
+module.exports = {
 	entry: { app: './src/index.ts' },
 	module: {
 		rules: [
@@ -57,6 +56,3 @@ const config: Configuration = {
 	target: ['node', 'es5'],
 	mode: 'production',
 }
-
-// eslint-disable-next-line no-restricted-syntax
-export default config

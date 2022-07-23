@@ -1,11 +1,10 @@
-import type { Configuration } from 'webpack'
-import { resolve } from 'path'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { resolve } = require('path')
 
-const config: Configuration = {
+module.exports = {
 	entry: { app: './src/index.ts' },
 	module: {
 		rules: [
@@ -71,6 +70,3 @@ const config: Configuration = {
 	target: ['web', 'es5'],
 	mode: 'production',
 }
-
-// eslint-disable-next-line no-restricted-syntax
-export default config
