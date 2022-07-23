@@ -14,12 +14,12 @@ function getRandomConfiguration(): string {
  * Tells the user how to correctly utilize the CLI.
  */
 export function sendHelpMessage(): void {
-	process.stdout.write(`fsaccone-cli # To build a project, run "fsaccone-cli <CONFIGURATION>"
+	process.stdout.write(`fsaccone # To build a project, run "fsaccone <CONFIGURATION>"
 
 Configurations:
     - ${getConfigurations().join('\n    - ')}
 
     Example:
-        fsaccone-cli ${getRandomConfiguration()}\n`)
+        fsaccone ${getRandomConfiguration()}\n`)
 }
 
