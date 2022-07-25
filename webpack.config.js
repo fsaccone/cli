@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const NodemonPlugin = require('nodemon-webpack-plugin')
+const { BannerPlugin } = require('webpack')
 
 module.exports = {
     entry: { app: './src/index.ts' },
@@ -48,6 +49,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new BannerPlugin({
+            banner: '#!/usr/bin/env node',
+            raw: true
+        }),
         new NodemonPlugin({
             cwd: resolve(__dirname, 'build'),
             script: 'index.min.js',
