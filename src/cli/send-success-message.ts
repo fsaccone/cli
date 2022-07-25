@@ -4,5 +4,5 @@
  * @param doneMessage - The configuration specific message to write to the console.
  */
 export function sendSuccessMessage(doneMessage: string): void {
-	process.stdout.write(`fsaccone # Files were written successfully. ${doneMessage}\n`)
+    process.stdout.write(`fsaccone # Files were written successfully. ${doneMessage}\n`)
 }

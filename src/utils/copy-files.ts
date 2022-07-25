@@ -2,21 +2,21 @@ import { lstatSync, mkdirSync, readFileSync, readdirSync, rmdirSync, unlinkSync,
 import { join } from 'path'
 
 function removeSubdirs(dir: string, removeRootDir = false): void {
-	const dirFiles = readdirSync(dir)
+    const dirFiles = readdirSync(dir)
 
-	for (const dirFile of dirFiles) {
-		const dirFileFullPath = join(dir, dirFile)
+    for (const dirFile of dirFiles) {
+        const dirFileFullPath = join(dir, dirFile)
 
-		if (lstatSync(dirFileFullPath).isDirectory()) {
-			removeSubdirs(dirFileFullPath, true)
-		} else {
-			unlinkSync(dirFileFullPath)
-		}
-	}
+        if (lstatSync(dirFileFullPath).isDirectory()) {
+            removeSubdirs(dirFileFullPath, true)
+        } else {
+            unlinkSync(dirFileFullPath)
+        }
+    }
 
-	if (removeRootDir) {
-		rmdirSync(dir)
-	}
+    if (removeRootDir) {
+        rmdirSync(dir)
+    }
 }
 
 /**
@@ -26,35 +26,35 @@ function removeSubdirs(dir: string, removeRootDir = false): void {
  * @param fullDirToWrite - The directory where the files will be written.
  */
 export function copyFiles(fullDirToRead: string, fullDirToWrite: string): string {
-	let doneMessage = ''
+    let doneMessage = ''
 
-	removeSubdirs(fullDirToWrite)
+    removeSubdirs(fullDirToWrite)
 
-	const filesToRead = readdirSync(fullDirToRead)
+    const filesToRead = readdirSync(fullDirToRead)
 
-	for (const fileToRead of filesToRead) {
-		const fileToReadFullPath = join(fullDirToRead, fileToRead)
-		let fileToWrite = fileToRead
+    for (const fileToRead of filesToRead) {
+        const fileToReadFullPath = join(fullDirToRead, fileToRead)
+        let fileToWrite = fileToRead
 
-		if (fileToRead === 'gitignore.txt') {
-			fileToWrite = '.gitignore'
-		} else if (fileToRead === 'donemessage.txt') {
-			doneMessage = readFileSync(fileToReadFullPath, 'utf-8').trim()
-			continue
-		}
+        if (fileToRead === 'gitignore.txt') {
+            fileToWrite = '.gitignore'
+        } else if (fileToRead === 'donemessage.txt') {
+            doneMessage = readFileSync(fileToReadFullPath, 'utf-8').trim()
+            continue
+        }
 
-		const fileToWriteFullPath = join(fullDirToWrite, fileToWrite)
+        const fileToWriteFullPath = join(fullDirToWrite, fileToWrite)
 
-		if (lstatSync(fileToReadFullPath).isDirectory()) {
-			mkdirSync(fileToWriteFullPath)
-			copyFiles(fileToReadFullPath, fileToWriteFullPath)
-			continue
-		}
+        if (lstatSync(fileToReadFullPath).isDirectory()) {
+            mkdirSync(fileToWriteFullPath)
+            copyFiles(fileToReadFullPath, fileToWriteFullPath)
+            continue
+        }
 
-		const fileToReadData = readFileSync(fileToReadFullPath, 'utf-8')
+        const fileToReadData = readFileSync(fileToReadFullPath, 'utf-8')
 
-		writeFileSync(fileToWriteFullPath, fileToReadData, 'utf-8')
-	}
+        writeFileSync(fileToWriteFullPath, fileToReadData, 'utf-8')
+    }
 
-	return doneMessage
+    return doneMessage
 }
