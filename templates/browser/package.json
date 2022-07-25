@@ -16,6 +16,7 @@
     "@typescript-eslint/parser": "*",
     "babel-loader": "*",
     "clean-webpack-plugin": "*",
+    "copy-webpack-plugin": "*",
     "css-loader": "*",
     "css-minimizer-webpack-plugin": "*",
     "html-webpack-plugin": "*",

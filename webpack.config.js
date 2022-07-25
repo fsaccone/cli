@@ -1,6 +1,6 @@
+const { resolve } = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const NodemonPlugin = require('nodemon-webpack-plugin')
-const { resolve } = require('path')
 
 module.exports = {
     entry: { app: './src/index.ts' },
