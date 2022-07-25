@@ -1,5 +1,4 @@
 import { readdirSync } from 'fs'
-import { resolve } from 'path'
 import { TEMPLATES_PATH } from 'index'
 
 /**
