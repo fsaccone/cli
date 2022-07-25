@@ -4,6 +4,7 @@ import { Command } from 'commander'
 import { initialize } from 'utils/initialize'
 
 const program = new Command()
+const TEMPLATES_PATH = resolve(__dirname, '../templates')
 
 program
     .argument('[configuration]', 'name of the project configuration to build')
@@ -16,4 +17,4 @@ program
     })
 program.parse(process.argv)
 
-export const TEMPLATES_PATH = resolve(__dirname, '../templates')
+export { TEMPLATES_PATH }

@@ -1,8 +1,8 @@
 import { resolve } from 'path'
 import { cwd } from 'process'
+import { logUnknownConfig } from 'cli/log-unknown-config'
 import { sendSuccessMessage } from 'cli/send-success-message'
 import { TEMPLATES_PATH } from 'index'
-import { logUnknownConfig } from '../cli/log-unknown-config'
 import { copyFiles } from './copy-files'
 import { getConfigurations } from './get-configurations'
 
